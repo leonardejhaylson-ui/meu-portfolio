@@ -3,66 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhaylson Conceição | Software Engineer</title>
+    <meta name="description" content="Portfólio de Jhaylson Conceição, estudante de Análise e Desenvolvimento de Sistemas com foco em software, Back-End, dados, IA e automação.">
+    <meta name="theme-color" content="#070a12">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Jhaylson Conceição | Desenvolvimento de Software, Back-End e IA">
+    <meta property="og:description" content="Projetos, stack e contatos de Jhaylson Conceição em Python, Java, JavaScript, C, dados, IA e automação.">
+    <meta property="og:image" content="sua-foto.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jhaylson Conceição | Portfólio de Desenvolvedor">
+    <meta name="twitter:description" content="Portfólio profissional com projetos em software, Back-End, dados, IA e automação.">
+    <link rel="canonical" href="https://leonardejhaylson-ui.github.io/meu-portfolio/">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preload" as="image" href="sua-foto.jpg">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (() => {
+            const storedTheme = localStorage.getItem('portfolio-theme');
+            const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.dataset.theme = storedTheme || systemTheme;
+        })();
+    </script>
+    <title>Jhaylson Conceição | Desenvolvimento de Software, Back-End e IA</title>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-    <!-- Botão do Tema Flutuante -->
-    <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema">🌓 Alternar Tema</button>
-
-    <div class="container">
-        <!-- Cabeçalho com Perfil Neon -->
-        <header class="profile">
-            <div class="avatar-wrapper">
-                <img src="sua-foto.jpg" alt="Foto de Jhaylson Conceição" class="avatar">
+    <header class="site-header" aria-label="Cabeçalho principal">
+        <nav class="nav" aria-label="Navegação principal">
+            <a class="brand" href="#hero" aria-label="Início do portfólio de Jhaylson Conceição">JC<span>_dev</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <div class="nav-links" id="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#stack">Stack</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#trajetoria">Trajetória</a>
+                <a href="#contato">Contato</a>
             </div>
-            <h1>Jhaylson Conceição</h1>
-            <p class="subtitle">Software Engineer & Data Specialist</p>
-            <div class="tech-tags">
-                <span>Java</span>
-                <span>Python</span>
-                <span>JavaScript</span>
-                <span>C</span>
-            </div>
-            <p class="bio">
-                Desenvolvedor Full Stack focado no ecossistema <strong>Back-End</strong> e arquitetura de dados. 
-                Atualmente atuando como <strong>Data Annotator & Evaluator</strong>, unindo engenharia de software com refinamento e avaliação de inteligência artificial.
-            </p>
-        </header>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+                <span aria-hidden="true">◐</span><span class="theme-label">Tema</span>
+            </button>
+        </nav>
+    </header>
 
-        <!-- Seção de Projetos Dinâmicos -->
-        <main class="projects-section">
-            <h2>Projetos em Destaque</h2>
-            
-            <!-- Filtros Estilizados -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="todos">Todos</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                <button class="filter-btn" data-filter="java">Java</button>
-                <button class="filter-btn" data-filter="c">C</button>
+    <main id="conteudo">
+        <section class="hero section reveal" id="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Software Development · Back-End · Dados/IA</p>
+                <h1 id="hero-title">Jhaylson Conceição</h1>
+                <p class="hero-subtitle">Estudante de ADS construindo projetos com Python, Java, JavaScript e C.</p>
+                <p class="hero-copy">Portfólio focado em desenvolvimento de software, automação, integração de sistemas e uso prático de dados e inteligência artificial para resolver problemas reais.</p>
+                <ul class="hero-tags" aria-label="Tecnologias principais">
+                    <li>Python</li><li>Java</li><li>JavaScript</li><li>C</li><li>Data</li><li>IA</li>
+                </ul>
+                <div class="hero-actions" aria-label="Ações principais">
+                    <a class="btn primary" href="#projetos">Ver projetos</a>
+                    <a class="btn secondary" href="https://github.com/leonardejhaylson-ui" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <span class="btn disabled" aria-disabled="true" title="URL real do LinkedIn não confirmada">LinkedIn em breve</span>
+                </div>
             </div>
+            <aside class="hero-panel" aria-label="Resumo visual do perfil técnico">
+                <div class="avatar-card">
+                    <img src="sua-foto.jpg" alt="Foto de Jhaylson Conceição" class="avatar" width="180" height="180">
+                    <span class="status-pill"><span aria-hidden="true"></span> Conectado ao aprendizado contínuo</span>
+                </div>
+                <div class="terminal-card" aria-hidden="true">
+                    <span>$ stack --focus</span>
+                    <strong>backend | automation | data | ai</strong>
+                    <span>$ build --with vanilla-web</span>
+                </div>
+            </aside>
+        </section>
 
-            <div id="projects-container" class="projects-grid">
-                <!-- Inserido dinamicamente via JS -->
+        <section class="section reveal" id="sobre" aria-labelledby="sobre-title">
+            <div class="section-heading"><p class="eyebrow">Sobre mim</p><h2 id="sobre-title">Perfil objetivo, técnico e em evolução</h2></div>
+            <div class="about-grid">
+                <p>Sou estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento de software, Back-End, automação e sistemas bem estruturados.</p>
+                <p>Minha experiência como Data Annotator & Evaluator conecta tecnologia, avaliação de dados e inteligência artificial, reforçando atenção a qualidade, contexto e melhoria contínua.</p>
             </div>
-        </main>
+        </section>
 
-        <!-- Links de Contato Profissionais -->
-        <footer class="links-section">
-            <h2>Vamos conectar?</h2>
-            <div class="links-grid">
-                <a href="https://wa.me/5562982341336" target="_blank" class="btn whatsapp">WhatsApp</a>
-                <a href="https://linkedin.com" target="_blank" class="btn linkedin">LinkedIn</a>
-                <a href="https://www.instagram.com/sla.jlc?igsh=bXEzeTBmNGdteXJ4" target="_blank" class="btn instagram">Instagram</a>
-                <a href="https://github.com/leonardejhaylson-ui" target="_blank" class="btn github">GitHub</a>
+        <section class="section reveal" id="stack" aria-labelledby="stack-title">
+            <div class="section-heading"><p class="eyebrow">Stack</p><h2 id="stack-title">Tecnologias e áreas de atuação</h2></div>
+            <div class="stack-grid">
+                <article class="stack-card"><h3>Linguagens</h3><div class="badge-list"><span>Python</span><span>Java</span><span>JavaScript</span><span>C</span><span>HTML</span><span>CSS</span></div></article>
+                <article class="stack-card"><h3>Desenvolvimento</h3><div class="badge-list"><span>Git</span><span>GitHub</span><span>APIs</span><span>Back-End</span><span>Automação</span></div></article>
+                <article class="stack-card"><h3>Dados / IA</h3><div class="badge-list"><span>Data</span><span>Inteligência Artificial</span><span>Processamento de dados</span><span>Avaliação de dados</span></div></article>
             </div>
-            <p class="footer-note">© 2026 - Desenvolvido por Jhaylson Conceição.</p>
-        </footer>
-    </div>
+        </section>
 
-    <script src="script.js"></script>
+        <section class="section reveal" id="projetos" aria-labelledby="projetos-title">
+            <div class="section-heading"><p class="eyebrow">Projetos</p><h2 id="projetos-title">Projetos selecionados</h2><p>Seleção baseada em repositórios públicos confirmados no GitHub.</p></div>
+            <div class="featured-project" id="featured-project"></div>
+            <div class="filter-container" role="group" aria-label="Filtrar projetos por tecnologia">
+                <button class="filter-btn active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+                <button class="filter-btn" type="button" data-filter="python" aria-pressed="false">Python</button>
+                <button class="filter-btn" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+                <button class="filter-btn" type="button" data-filter="java" aria-pressed="false">Java</button>
+                <button class="filter-btn" type="button" data-filter="c" aria-pressed="false">C</button>
+                <button class="filter-btn" type="button" data-filter="outros" aria-pressed="false">Outros</button>
+            </div>
+            <div id="projects-container" class="projects-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="section reveal" id="trajetoria" aria-labelledby="trajetoria-title">
+            <div class="section-heading"><p class="eyebrow">Trajetória</p><h2 id="trajetoria-title">Formação, experiência e foco atual</h2></div>
+            <div class="timeline-grid">
+                <article><span>Formação</span><h3>Análise e Desenvolvimento de Sistemas</h3></article>
+                <article><span>Experiência</span><h3>Data Annotator & Evaluator</h3></article>
+                <article><span>Foco atual</span><h3>Software, Back-End, dados e IA</h3></article>
+            </div>
+        </section>
+
+        <section class="section github-section reveal" aria-labelledby="github-title">
+            <div><p class="eyebrow">GitHub</p><h2 id="github-title">Código, evolução e projetos públicos</h2><p>Veja os repositórios públicos para acompanhar estudos, experimentos e soluções em Python, Java, JavaScript, C, dados e IA.</p></div>
+            <a class="btn primary" href="https://github.com/leonardejhaylson-ui?tab=repositories" target="_blank" rel="noopener noreferrer">Explorar repositórios</a>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contato" aria-labelledby="contato-title">
+        <div class="section-heading"><p class="eyebrow">Contato</p><h2 id="contato-title">Vamos conectar?</h2></div>
+        <div class="contact-grid">
+            <a class="contact-btn" href="https://github.com/leonardejhaylson-ui" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="contact-btn" href="https://wa.me/5562982341336" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="contact-btn" href="https://www.instagram.com/sla.jlc?igsh=bXEzeTBmNGdteXJ4" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+        <p class="footer-note">© 2026 — Desenvolvido por Jhaylson Conceição.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
